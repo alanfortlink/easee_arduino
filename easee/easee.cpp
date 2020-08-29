@@ -13,6 +13,6 @@ void Easee::setup() {
     d_lcdDisplay_p->setup();
 }
 
-void Easee::loop(int t) {}
+void Easee::loop(int t) { d_lcdDisplay_p->loop(t); }
 
 }  // namespace easee
