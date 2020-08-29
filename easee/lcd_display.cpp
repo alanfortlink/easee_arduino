@@ -23,8 +23,6 @@ void LCDDisplay::setup() {
 
     d_buffer1 = new char[16];
     d_buffer2 = new char[16];
-
-    setText("ALAN", "MARTINS");
 }
 
 void LCDDisplay::setText(char* buf1, char* buf2){

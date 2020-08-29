@@ -11,6 +11,8 @@ Easee::~Easee() {
 void Easee::setup() {
     d_lcdDisplay_p = new LCDDisplay();
     d_lcdDisplay_p->setup();
+
+    d_lcdDisplay_p->setText("Natanael", "Ramos");
 }
 
 void Easee::loop(int t) { d_lcdDisplay_p->loop(t); }
