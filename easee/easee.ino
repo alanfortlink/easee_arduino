@@ -1,6 +1,7 @@
+#include "easee.h"
 
-void setup() {
-}
+easee::Easee app;
 
-void loop() {
-}
+void setup() { app.setup(); }
+
+void loop() { app.loop(millis()); }
