@@ -2,6 +2,8 @@
 
 namespace easee {
 
+void LCDDisplay::setup() {}
 
+void LCDDisplay::loop(int t) {}
 
-}
+}  // namespace easee
