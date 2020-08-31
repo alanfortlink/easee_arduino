@@ -11,7 +11,7 @@ class Rect : public Component {
     Rect(int x, int y, int width, int height, Color bgColor = Color::BLACK);
     ~Rect();
 
-    virtual void render(Display& display);
+    virtual void draw(Display& display);
 
    protected:
     Color d_bgColor;

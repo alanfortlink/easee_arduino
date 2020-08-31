@@ -1,4 +1,4 @@
-#include "rect.h"
+#include <rect.h>
 
 namespace easee {
 
@@ -7,8 +7,8 @@ Rect::Rect(int x, int y, int width, int height, Color bgColor)
 
 Rect::~Rect() {}
 
-void Rect::render(Display& display) {
-    display.fillRect(d_y, d_y, d_width, d_height, d_bgColor);
+void Rect::draw(Display& display) {
+    display.fillRect(d_x, d_y, d_width, d_height, d_bgColor);
 }
 
 }  // namespace easee

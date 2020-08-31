@@ -1,7 +1,7 @@
 #ifndef EASEE_COMPONENT_H
 #define EASEE_COMPONENT_H
 
-#include "../display/display.h"
+#include <display.h>
 
 namespace easee {
 
@@ -10,13 +10,19 @@ class Component {
     Component(int x, int y, int width, int height);
     virtual ~Component();
 
-    virtual void render(Display& display) = 0;
+    void render(Display& display);
+
+    virtual void draw(Display& display) = 0;
+    void invalidate() { d_invalidated = true; }
+    inline bool invalidated() { return d_invalidated; };
 
    protected:
     int d_x;
     int d_y;
     int d_width;
     int d_height;
+
+    bool d_invalidated;
 };
 
 }  // namespace easee

@@ -15,6 +15,7 @@ class TouchDisplay : public Display {
     void loop(int t);
 
     virtual void fillRect(int x, int y, int w, int h, const Color& color);
+    virtual void drawText(const String& text, int x, int y, const Color& color);
 
    protected:
     UTFTGLUE d_display;
