@@ -1,8 +1,8 @@
 #ifndef EASEE_EASEE_H
 #define EASEE_EASEE_H
 
-// #include "display/touch_display.h"
-// #include "widgets/rect.h"
+#include <rect.h>
+#include <touch_display.h>
 
 namespace easee {
 
@@ -15,8 +15,8 @@ class Easee {
     ~Easee();
 
    protected:
-    // TouchDisplay d_touchDisplay;
-    // Rect* d_containerRect;
+    TouchDisplay d_touchDisplay;
+    Rect* d_containerRect;
 };
 
 };  // namespace easee
