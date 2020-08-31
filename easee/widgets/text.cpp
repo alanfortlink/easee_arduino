@@ -16,7 +16,6 @@ void Text::setText(const String& text) {
 }
 
 void Text::draw(Display& display) {
-    display.fillRect(d_x, d_y, d_width, d_height, d_style.bgColor());
     display.drawText(d_text, d_x, d_y, d_style);
 }
 

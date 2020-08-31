@@ -2,6 +2,7 @@
 #define EASEE_EASEE_H
 
 #include <text.h>
+#include <home.h>
 #include <touch_display.h>
 #include <temperature.h>
 #include <luminosity.h>
@@ -24,7 +25,7 @@ class Easee {
     Luminosity d_luminosity;
     Gyroscope d_gyroscope;
 
-    Text* d_text;
+    Home* d_home;
 
     Luminosity::LuminosityData d_oldLuminosityData;
 };

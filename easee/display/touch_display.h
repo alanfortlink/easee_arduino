@@ -8,6 +8,9 @@ namespace easee {
 
 class TouchDisplay : public Display {
    public:
+    static int WIDTH;
+    static int HEIGHT;
+
     TouchDisplay();
     virtual ~TouchDisplay();
 

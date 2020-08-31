@@ -21,8 +21,12 @@ set(SOURCES easee/display/display.cpp
             easee/widgets/color.cpp 
             easee/widgets/component.cpp
             easee/widgets/rect.cpp
+            easee/widgets/card.cpp
             easee/widgets/text.cpp
+            easee/widgets/temperature_card.cpp
+            easee/widgets/humidity_card.cpp
             easee/widgets/textstyle.cpp
+            easee/widgets/home.cpp
             )
 
 add_arduino_executable(easee_exec ${SOURCES})

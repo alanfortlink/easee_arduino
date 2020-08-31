@@ -27,34 +27,8 @@ class Provider {
     static Provider<T>* d_instance;
 };
 
-template<class T>
+template <class T>
 Provider<T>* Provider<T>::d_instance = nullptr;
-
-// class Provider {
-//    public:
-//     inline Temperature::TemperatureData getTemperatureData() {
-//         return d_temperatureData;
-//     }
-// 
-//     void setTemperatureData(Temperature::TemperatureData temperatureData);
-// 
-//     inline Luminosity::LuminosityData getLuminosityData() {
-//         return d_luminosityData;
-//     }
-// 
-//     void setLuminosityData(Luminosity::LuminosityData luminosityData);
-// 
-//     static Provider* instance();
-// 
-//    private:
-//     static Provider* d_instance;
-// 
-//     Temperature::TemperatureData d_temperatureData;
-//     Luminosity::LuminosityData d_luminosityData;
-// 
-//     Provider();
-//     ~Provider();
-// };
 
 };  // namespace easee
 

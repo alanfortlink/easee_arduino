@@ -13,8 +13,11 @@ class Component {
     void render(Display& display);
 
     virtual void draw(Display& display) = 0;
+    virtual void loop(int t){}
+
     void invalidate() { d_invalidated = true; }
     inline bool invalidated() { return d_invalidated; };
+
 
    protected:
     int d_x;
