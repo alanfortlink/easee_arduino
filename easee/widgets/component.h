@@ -1,8 +1,7 @@
 #ifndef EASEE_COMPONENT_H
 #define EASEE_COMPONENT_H
 
-#include "touch_display.h"
-#include "display.h"
+#include "../display/display.h"
 
 namespace easee {
 

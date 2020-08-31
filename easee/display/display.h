@@ -1,7 +1,7 @@
 #ifndef EASEE_DISPLAY_H
 #define EASEE_DISPLAY_H
 
-#include "color.h"
+#include "../widgets/color.h"
 
 namespace easee {
 

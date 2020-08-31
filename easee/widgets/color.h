@@ -13,10 +13,10 @@ class Color {
 
     Color(int r, int g, int b, float a = 1);
 
-    inline int r() { return d_r; };
-    inline int g() { return d_g; };
-    inline int b() { return d_b; };
-    inline float a() { return d_a; };
+    inline int r() const { return d_r; };
+    inline int g() const { return d_g; };
+    inline int b() const { return d_b; };
+    inline float a() const { return d_a; };
 
    protected:
     int d_r;

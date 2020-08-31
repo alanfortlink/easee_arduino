@@ -1,8 +1,8 @@
 #ifndef EASEE_EASEE_H
 #define EASEE_EASEE_H
 
-#include "touch_display.h"
-#include "rect.h"
+#include "display/touch_display.h"
+#include "widgets/rect.h"
 
 namespace easee {
 
