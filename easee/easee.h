@@ -5,6 +5,7 @@
 #include <touch_display.h>
 #include <temperature.h>
 #include <luminosity.h>
+#include <gyro.h>
 
 namespace easee {
 
@@ -21,6 +22,8 @@ class Easee {
     TouchDisplay d_touchDisplay;
     Temperature d_temperature;
     Luminosity d_luminosity;
+    Gyroscope d_gyroscope;
+
     Text* d_text;
 
     Luminosity::LuminosityData d_oldLuminosityData;
