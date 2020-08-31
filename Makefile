@@ -5,7 +5,8 @@ clean:
 init:
 	rm -rf ${BUILD_DIR}
 	mkdir ${BUILD_DIR}
-	cmake -DCMAKE_TOOLCHAIN_FILE=cmake/Arduino-Toolchain.cmake -B${BUILD_DIR} -H.
+	cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_TOOLCHAIN_FILE=cmake/Arduino-Toolchain.cmake -B${BUILD_DIR} -H.
+	cp ${BUILD_DIR}/compile_commands.json .
 
 build:
 	make -C ${BUILD_DIR} -j

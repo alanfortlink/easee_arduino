@@ -2,7 +2,7 @@
 #define EASEE_TOUCH_DISPLAY_H
 
 #include <UTFTGLUE.h>
-#include "display.h"
+#include <display.h>
 
 namespace easee {
 
@@ -17,7 +17,7 @@ class TouchDisplay : public Display {
     virtual void fillRect(int x, int y, int w, int h, const Color& color);
 
    protected:
-    UTFTGLUE d_display;
+    // UTFTGLUE d_display;
 };
 
 }  // namespace easee

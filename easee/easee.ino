@@ -1,7 +1,8 @@
-#include "easee.h"
+#include <Arduino.h>
+// #include "easee.h"
 
-easee::Easee app;
+// easee::Easee app;
 
-void setup() { app.setup(); }
+void setup() {}
 
-void loop() { app.loop(millis()); }
+void loop() {}
