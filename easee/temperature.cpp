@@ -2,14 +2,22 @@
 
 namespace easee {
 
-Temperature::Temperature(){
+Temperature::Temperature(int port) : d_port(port), d_dht() {}
+
+Temperature::~Temperature() {}
+
+Temperature::TemperatureData Temperature::getData() {
+    TemperatureData data;
+
+    int chk = d_dht.read11(d_port);
+    data.celsius = d_dht.temperature;
+    data.humidity = d_dht.humidity;
+    
+    return data;
 }
 
-Temperature::~Temperature(){
-}
+void Temperature::setup() {}
 
-float Temperature::getCelsius(){
-    return 0;
-}
+void Temperature::loop(int t) {}
 
-}
+}  // namespace easee

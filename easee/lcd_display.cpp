@@ -14,23 +14,21 @@ LCDDisplay::LCDDisplay(int rs, int en, int d4, int d5, int d6, int d7)
       d_liquidCrystal(rs, en, d4, d5, d6, d7) {}
 
 LCDDisplay::~LCDDisplay() {
-    delete d_buffer1;
-    delete d_buffer2;
 }
 
 void LCDDisplay::setup() {
     d_liquidCrystal.begin(16, 2);
-
-    d_buffer1 = new char[16];
-    d_buffer2 = new char[16];
 }
 
-void LCDDisplay::setText(char* buf1, char* buf2){
-    memset(d_buffer1, ' ', 16);
-    memset(d_buffer2, ' ', 16);
+void LCDDisplay::setText(const String& buf1, const String& buf2){
+    const int s1 = buf1.length();
+    const int s2 = buf2.length();
 
-    strncpy(d_buffer1, buf1, strlen(buf1));
-    strncpy(d_buffer2, buf2, strlen(buf2));
+    buf1.toCharArray(d_buffer1, s1);
+    buf2.toCharArray(d_buffer2, s2);
+
+    for(int i = s1-1; i < 16; i++) d_buffer1[i] = ' ';
+    for(int i = s2-1; i < 16; i++) d_buffer2[i] = ' ';
 }
 
 void LCDDisplay::loop(int t) {

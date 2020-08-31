@@ -2,26 +2,34 @@
 
 namespace easee {
 
-Easee::Easee() : d_lcdDisplay_p(nullptr) {}
+Easee::Easee() : d_lcdDisplay(), d_temperature() {}
 
-Easee::~Easee() {
-    if (d_lcdDisplay_p) delete d_lcdDisplay_p;
-}
+Easee::~Easee() {}
 
 void Easee::setup() {
-    d_lcdDisplay_p = new LCDDisplay();
-    d_lcdDisplay_p->setup();
+    d_lcdDisplay.setup();
+    d_temperature.setup();
 
-    d_lcdDisplay_p->setText("Natanael", "Ramos");
+    d_lcdDisplay.setText("Natanael", "Ramos");
 }
 
-void Easee::loop(int t) { 
-    if(t > 10000) {
-        d_lcdDisplay_p->setText("Alan", "Martins");
-    }else if(t > 5000){
-        d_lcdDisplay_p->setText("Temp", "Person");
-    }
-    d_lcdDisplay_p->loop(t); 
+void Easee::loop(int t) {
+    d_lcdDisplay.loop(t);
+    d_temperature.loop(t);
+
+    updateTemperature();
+}
+
+void Easee::updateTemperature() {
+    Temperature::TemperatureData data = d_temperature.getData();
+
+    String celsius = "Temp.: ";
+    celsius += data.celsius;
+
+    String humidity = "Humid.: ";
+    humidity += data.humidity;
+
+    d_lcdDisplay.setText(celsius, humidity);
 }
 
 }  // namespace easee

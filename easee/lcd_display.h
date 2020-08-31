@@ -39,7 +39,7 @@ class LCDDisplay {
      * @param buf1 Text to show in the first line of the display.
      * @param buf2 Text to show in the second line of the display.
      */
-    void setText(char* buf1, char* buf2);
+    void setText(const String& buf1, const String& buf2);
 
    protected:
     int d_rs;
@@ -50,8 +50,8 @@ class LCDDisplay {
     int d_d7;
     LiquidCrystal d_liquidCrystal;
 
-    char* d_buffer1;
-    char* d_buffer2;
+    char d_buffer1[16];
+    char d_buffer2[16];
 };
 
 }  // namespace easee

@@ -2,6 +2,7 @@
 #define EASEE_EASEE_H
 
 #include "lcd_display.h"
+#include "temperature.h"
 
 namespace easee {
 
@@ -14,7 +15,11 @@ class Easee {
     ~Easee();
 
    protected:
-    LCDDisplay* d_lcdDisplay_p;
+    LCDDisplay d_lcdDisplay;
+    Temperature d_temperature;
+
+   private:
+    void updateTemperature();
 };
 
 };  // namespace easee
