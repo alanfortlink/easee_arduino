@@ -4,6 +4,7 @@
 #include <text.h>
 #include <touch_display.h>
 #include <temperature.h>
+#include <luminosity.h>
 
 namespace easee {
 
@@ -11,7 +12,7 @@ class Easee {
    public:
     void setup();
     void loop(int t);
-    void updateInfo(int t);
+    void updateSensors(int t);
 
     Easee();
     ~Easee();
@@ -19,7 +20,10 @@ class Easee {
    protected:
     TouchDisplay d_touchDisplay;
     Temperature d_temperature;
+    Luminosity d_luminosity;
     Text* d_text;
+
+    Luminosity::LuminosityData d_oldLuminosityData;
 };
 
 };  // namespace easee
