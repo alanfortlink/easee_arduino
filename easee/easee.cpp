@@ -17,7 +17,6 @@ Easee::~Easee() {
 
 void Easee::setup() {
     d_containerRect = new Rect(0, 0, 200, 200);
-
     d_touchDisplay.setup();
 }
 
