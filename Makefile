@@ -10,4 +10,7 @@ init:
 build:
 	make -C ${BUILD_DIR} -j
 
+upload:
+	avrdude -cavrispmkII -patmega2560 -P/dev/cu.usbmodem143301 -Uflash:w:build/easee_exec.hex -D
+
 .PHONY: clean init build

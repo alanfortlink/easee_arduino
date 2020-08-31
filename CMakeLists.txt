@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.8.2)
 
-project(Hello_World)
+project(Easee)
 
-arduino_cmake_project(Hello_World BOARD_NAME mega BOARD_CPU atmega2560)
+arduino_cmake_project(easee BOARD_NAME mega BOARD_CPU atmega2560)
 
-add_arduino_executable(Hello_World easee/test.cpp)
+add_arduino_executable(easee_exec easee/test.cpp)
 
-set_target_upload_port(Hello_World /dev/cu.usbmodem143301)
+set_target_upload_port(easee_exec atmega2560 /dev/cu.usbmodem143301)
