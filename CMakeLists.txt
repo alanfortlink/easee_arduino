@@ -14,6 +14,7 @@ include_directories(libraries/DHTlib)
 set(SOURCES easee/display/display.cpp 
             easee/display/touch_display.cpp
             easee/easee.cpp 
+            easee/provider.cpp
             easee/sensors/gyro.cpp
             easee/sensors/luminosity.cpp
             easee/sensors/temperature.cpp

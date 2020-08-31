@@ -1,4 +1,5 @@
 #include <luminosity.h>
+#include <provider.h>
 
 namespace easee {
 
@@ -15,6 +16,8 @@ Luminosity::LuminosityData Luminosity::getData() {
 
 void Luminosity::setup() {}
 
-void Luminosity::loop(int t) {}
+void Luminosity::loop(int t) {
+    Provider<LuminosityData>::instance()->set(getData());
+}
 
 }  // namespace easee

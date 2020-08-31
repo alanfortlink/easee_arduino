@@ -19,13 +19,6 @@ class Temperature {
     ~Temperature();
 
     /**
-     * @brief reads the temperature from the sensor.
-     *
-     * @return current temperature in Celsius.
-     */
-    TemperatureData getData();
-
-    /**
      * @brief Setup the temperature sensor.
      */
     void setup();
@@ -38,6 +31,14 @@ class Temperature {
    protected:
     int d_port;
     dht d_dht;
+
+   private:
+    /**
+     * @brief reads the temperature from the sensor.
+     *
+     * @return current temperature in Celsius.
+     */
+    TemperatureData getData();
 };
 
 }  // namespace easee

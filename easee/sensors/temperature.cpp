@@ -1,3 +1,4 @@
+#include <provider.h>
 #include <temperature.h>
 
 namespace easee {
@@ -12,12 +13,14 @@ Temperature::TemperatureData Temperature::getData() {
     int chk = d_dht.read11(d_port);
     data.celsius = d_dht.temperature;
     data.humidity = d_dht.humidity;
-    
+
     return data;
 }
 
 void Temperature::setup() {}
 
-void Temperature::loop(int t) {}
+void Temperature::loop(int t) {
+    Provider<TemperatureData>::instance()->set(getData());
+}
 
 }  // namespace easee
