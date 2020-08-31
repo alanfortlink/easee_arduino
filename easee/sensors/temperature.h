@@ -15,7 +15,7 @@ class Temperature {
         float humidity;
     };
 
-    Temperature(int port = 13);
+    Temperature(int port = 53);
     ~Temperature();
 
     /**

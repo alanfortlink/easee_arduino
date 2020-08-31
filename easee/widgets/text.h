@@ -9,14 +9,15 @@ namespace easee {
 class Text : public Component {
    public:
     Text(int x, int y, int width, int height, const String& text,
-         Color bgColor = Color::WHITE, Color textColor = Color::BLACK);
+         const TextStyle& style = TextStyle::NORMAL);
     ~Text();
 
     virtual void draw(Display& display);
 
+    void setText(const String& text);
+
    protected:
-    Color d_bgColor;
-    Color d_textColor;
+    TextStyle d_style;
     String d_text;
 };
 

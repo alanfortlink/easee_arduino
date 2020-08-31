@@ -1,9 +1,9 @@
 #ifndef EASEE_EASEE_H
 #define EASEE_EASEE_H
 
-#include <rect.h>
 #include <text.h>
 #include <touch_display.h>
+#include <temperature.h>
 
 namespace easee {
 
@@ -11,13 +11,14 @@ class Easee {
    public:
     void setup();
     void loop(int t);
+    void updateInfo(int t);
 
     Easee();
     ~Easee();
 
    protected:
     TouchDisplay d_touchDisplay;
-    Rect* d_containerRect;
+    Temperature d_temperature;
     Text* d_text;
 };
 
