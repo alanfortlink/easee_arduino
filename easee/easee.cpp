@@ -2,34 +2,21 @@
 
 namespace easee {
 
-Easee::Easee() : d_lcdDisplay(), d_temperature() {}
+Easee::Easee() : d_touchDisplay(), d_containerRect(nullptr) {}
 
-Easee::~Easee() {}
+Easee::~Easee() {
+    if (d_containerRect) delete d_containerRect;
+}
 
 void Easee::setup() {
-    d_lcdDisplay.setup();
-    d_temperature.setup();
+    d_containerRect = new Rect(0, 0, 200, 200);
 
-    d_lcdDisplay.setText("Natanael", "Ramos");
+    d_touchDisplay.setup();
 }
 
 void Easee::loop(int t) {
-    d_lcdDisplay.loop(t);
-    d_temperature.loop(t);
-
-    updateTemperature();
-}
-
-void Easee::updateTemperature() {
-    Temperature::TemperatureData data = d_temperature.getData();
-
-    String celsius = "Temp.: ";
-    celsius += data.celsius;
-
-    String humidity = "Humid.: ";
-    humidity += data.humidity;
-
-    d_lcdDisplay.setText(celsius, humidity);
+    d_touchDisplay.loop(t);
+    d_containerRect->render(d_touchDisplay);
 }
 
 }  // namespace easee

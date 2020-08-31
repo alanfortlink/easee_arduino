@@ -1,8 +1,8 @@
 #ifndef EASEE_EASEE_H
 #define EASEE_EASEE_H
 
-#include "lcd_display.h"
-#include "temperature.h"
+#include "touch_display.h"
+#include "rect.h"
 
 namespace easee {
 
@@ -15,11 +15,8 @@ class Easee {
     ~Easee();
 
    protected:
-    LCDDisplay d_lcdDisplay;
-    Temperature d_temperature;
-
-   private:
-    void updateTemperature();
+    TouchDisplay d_touchDisplay;
+    Rect* d_containerRect;
 };
 
 };  // namespace easee
