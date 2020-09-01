@@ -1,23 +1,24 @@
-#ifndef EASEE_COMPONENT_H
-#define EASEE_COMPONENT_H
+#ifndef EASEE_WIDGET_H
+#define EASEE_WIDGET_H
 
 #include <display.h>
 
 namespace easee {
 
-class Component {
+class Widget {
    public:
-    Component(int x, int y, int width, int height);
-    virtual ~Component();
+    Widget(int x, int y, int width, int height);
+    virtual ~Widget();
 
     void render(Display& display);
 
-    virtual void draw(Display& display) = 0;
-    virtual void loop(int t){}
+    virtual void drawBackground(Display& display) = 0;
+    virtual void drawForeground(Display& display) = 0;
+
+    virtual void loop(int t) {}
 
     void invalidate() { d_invalidated = true; }
     inline bool invalidated() { return d_invalidated; };
-
 
    protected:
     int d_x;

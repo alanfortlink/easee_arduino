@@ -7,8 +7,9 @@ const int PADDING = 5;
 namespace easee {
 
 Card::Card(int x, int y, int width, int height)
-    : Component(x, y, width, height) {}
+    : Widget(x, y, width, height) {}
 
-void Card::draw(Display& display) {}
+void Card::drawBackground(Display& display) {}
+void Card::drawForeground(Display& display) {}
 
 }  // namespace easee

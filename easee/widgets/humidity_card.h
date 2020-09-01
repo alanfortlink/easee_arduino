@@ -1,15 +1,20 @@
 #ifndef EASEE_HUMIDITY_CARD_H
 #define EASEE_HUMIDITY_CARD_H
 
-#include <component.h>
+#include <widget.h>
+#include <rect.h>
+#include <text.h>
 
 namespace easee {
 
-class HumidityCard : public Component {
+class HumidityCard : public Widget {
    public:
     HumidityCard(int x, int y, int width, int height);
-    virtual void draw(Display& display);
+    virtual void drawBackground(Display& display);
+    virtual void drawForeground(Display& display);
     virtual void loop(int t);
+
+   protected:
 };
 
 }  // namespace easee

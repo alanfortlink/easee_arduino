@@ -9,20 +9,11 @@ namespace easee {
 const int PADDING = 10;
 
 LuminosityCard::LuminosityCard(int x, int y, int width, int height)
-    : Component(x, y, width, height) {}
+    : Widget(x, y, width, height) {}
 
-void LuminosityCard::draw(Display& display) {
+void LuminosityCard::drawBackground(Display& display) {
     Rect(d_x + PADDING, d_y + PADDING, d_width - PADDING, d_height - PADDING,
          Color::PURPLE)
-        .render(display);
-
-    String temperatureTxt;
-    temperatureTxt +=
-        (int)Provider<Luminosity::LuminosityData>::instance()->get().luminosity;
-
-    Text(d_x + 2 * PADDING, d_y + 2 * PADDING, d_width - 2 * PADDING,
-         d_height - 2 * PADDING, temperatureTxt,
-         TextStyle(5, Color::WHITE, Color::PURPLE))
         .render(display);
 
     Text(d_x + 2 * PADDING, d_y + d_height - 2 * PADDING, d_width - 2 * PADDING,
@@ -31,6 +22,17 @@ void LuminosityCard::draw(Display& display) {
         .render(display);
 }
 
-void LuminosityCard::loop(int t) { invalidate(); }
+void LuminosityCard::drawForeground(Display& display) {
+    String temperatureTxt;
+    temperatureTxt +=
+        (int)Provider<Luminosity::LuminosityData>::instance()->get().luminosity;
+
+    Text(d_x + 2 * PADDING, d_y + 2 * PADDING, d_width - 2 * PADDING,
+         d_height - 2 * PADDING, temperatureTxt,
+         TextStyle(5, Color::WHITE, Color::PURPLE))
+        .render(display);
+}
+
+void LuminosityCard::loop(int t) {}
 
 }  // namespace easee

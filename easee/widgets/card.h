@@ -1,15 +1,16 @@
 #ifndef EASEE_CARD_H
 #define EASEE_CARD_H
 
-#include <component.h>
+#include <widget.h>
 
 namespace easee {
 
-class Card : Component {
+class Card : public Widget {
    public:
     Card(int x, int y, int width, int height);
 
-    virtual void draw(Display& display);
+    virtual void drawBackground(Display& display);
+    virtual void drawForeground(Display& display);
 };
 
 }  // namespace easee

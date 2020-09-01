@@ -2,17 +2,18 @@
 #define EASEE_TEXT_H
 
 #include <Arduino.h>
-#include <component.h>
+#include <widget.h>
 
 namespace easee {
 
-class Text : public Component {
+class Text : public Widget {
    public:
     Text(int x, int y, int width, int height, const String& text,
          const TextStyle& style = TextStyle::NORMAL);
     ~Text();
 
-    virtual void draw(Display& display);
+    virtual void drawBackground(Display& display);
+    virtual void drawForeground(Display& display);
 
     void setText(const String& text);
 

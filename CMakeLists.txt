@@ -20,7 +20,7 @@ set(SOURCES easee/display/display.cpp
             easee/sensors/temperature.cpp
             easee/widgets/card.cpp
             easee/widgets/color.cpp 
-            easee/widgets/component.cpp
+            easee/widgets/widget.cpp
             easee/widgets/home.cpp
             easee/widgets/humidity_card.cpp
             easee/widgets/luminosity_card.cpp

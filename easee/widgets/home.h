@@ -1,17 +1,18 @@
 #ifndef EASEE_HOME_H
 #define EASEE_HOME_H
 
-#include <component.h>
+#include <widget.h>
 #include <humidity_card.h>
 #include <temperature_card.h>
 #include <luminosity_card.h>
 
 namespace easee {
 
-class Home : public Component {
+class Home : public Widget {
    public:
     Home(int x, int y, int width, int height);
-    virtual void draw(Display& display);
+    virtual void drawBackground(Display& display);
+    virtual void drawForeground(Display& display);
     virtual void loop(int t);
 
    protected:

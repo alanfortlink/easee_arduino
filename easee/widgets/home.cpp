@@ -10,25 +10,30 @@ const int CARD_SIZE = easee::TouchDisplay::WIDTH / 2;
 namespace easee {
 
 Home::Home(int x, int y, int width, int height)
-    : Component(x, y, width, height),
+    : Widget(x, y, width, height),
       d_temperatureCard(x, y, CARD_SIZE, CARD_SIZE),
-      d_humidityCard(x + width / 2, y, CARD_SIZE, CARD_SIZE),
+      d_humidityCard(x + CARD_SIZE, y, CARD_SIZE, CARD_SIZE),
       d_luminosityCard(x, y + CARD_SIZE, CARD_SIZE, CARD_SIZE) {}
 
-void Home::draw(Display& display) {
-    display.fillRect(d_x, d_y, d_width, d_height, Color::BLACK);
+void Home::drawBackground(Display& display) {
+    if (d_isFirstTime)
+        display.fillRect(d_x, d_y, d_width, d_height, Color::BLACK);
+    d_temperatureCard.render(display);
+    d_humidityCard.render(display);
+    d_luminosityCard.render(display);
+}
+
+void Home::drawForeground(Display& display) {
     d_temperatureCard.render(display);
     d_humidityCard.render(display);
     d_luminosityCard.render(display);
 }
 
 void Home::loop(int t) {
-    Component::loop(t);
+    Widget::loop(t);
     d_temperatureCard.loop(t);
     d_humidityCard.loop(t);
     d_luminosityCard.loop(t);
-
-    invalidate();
 }
 
 }  // namespace easee
