@@ -32,6 +32,8 @@ void HumidityCard::draw(Display& display) {
         .render(display);
 }
 
-void HumidityCard::loop(int t) { invalidate(); }
+void HumidityCard::loop(int t) {
+    invalidate();
+}
 
 }  // namespace easee

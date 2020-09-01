@@ -26,6 +26,7 @@ class Component {
     int d_height;
 
     bool d_invalidated;
+    bool d_isFirstTime;
 };
 
 }  // namespace easee

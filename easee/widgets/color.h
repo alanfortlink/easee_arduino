@@ -11,6 +11,7 @@ class Color {
     static Color GREEN;
     static Color DARK_GREEN;
     static Color BLUE;
+    static Color PURPLE;
 
     Color(int r, int g, int b, float a = 1);
 

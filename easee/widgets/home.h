@@ -4,6 +4,7 @@
 #include <component.h>
 #include <humidity_card.h>
 #include <temperature_card.h>
+#include <luminosity_card.h>
 
 namespace easee {
 
@@ -16,6 +17,7 @@ class Home : public Component {
    protected:
     TemperatureCard d_temperatureCard;
     HumidityCard d_humidityCard;
+    LuminosityCard d_luminosityCard;
 };
 
 }  // namespace easee

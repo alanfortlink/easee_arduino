@@ -8,6 +8,7 @@ Color Color::RED = Color(255, 0, 0);
 Color Color::GREEN = Color(0, 255, 0);
 Color Color::DARK_GREEN = Color(0, 120, 0);
 Color Color::BLUE = Color(0, 0, 255);
+Color Color::PURPLE = Color(128, 0, 128);
 
 Color::Color(int r, int g, int b, float a) : d_r(r), d_g(g), d_b(b), d_a(a) {}
 
