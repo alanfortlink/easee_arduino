@@ -4,5 +4,4 @@ set(SOURCES
 )
 
 add_library(ui_lib_styles STATIC ${SOURCES})
-
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})

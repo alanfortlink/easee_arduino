@@ -1,9 +1,8 @@
 #ifndef EASEE_DISPLAY_H
 #define EASEE_DISPLAY_H
 
-#include <Arduino.h>
-#include <color.h>
 #include <textstyle.h>
+#include <Arduino.h>
 
 namespace easee {
 
