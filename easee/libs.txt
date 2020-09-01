@@ -1,4 +1,0 @@
-adafruitgfx
-mcufriend
-liquiddisplay
-dht
